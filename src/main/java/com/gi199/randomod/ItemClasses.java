@@ -1,22 +1,23 @@
 package com.gi199.randomod;
 
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents.ModifyEntries.*;
 import net.minecraft.component.type.ConsumableComponent;
 import net.minecraft.component.type.ConsumableComponents;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.SwordItem;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.consume.ApplyEffectsConsumeEffect;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+
 import java.util.function.Function;
 
 public class ItemClasses {
@@ -34,35 +35,34 @@ public class ItemClasses {
     }
     public static final Item SECRET_ITEM = register("secret_item", Item::new, new Item.Settings());
 
+    public static void initialize() {
+        // Get the event for modifying entries in the ingredients group.
+// And register an event handler that adds our suspicious item to the ingredients group.
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
+                .register((itemGroup) -> itemGroup.add(ItemClasses.SECRET_ITEM));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK)
+                .register((itemGroup) -> itemGroup.add(ItemClasses.SECRET_FOOD));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+                .register((itemGroup) -> itemGroup.add(ItemClasses.SECRET_SWORD));
 
-    //注册 "POISON_FOOD_CONSUMABLE_COMPONENT"
+    }
     public static final ConsumableComponent POISON_FOOD_CONSUMABLE_COMPONENT = ConsumableComponents.food()
             // The duration is in ticks, 20 ticks = 1 second
-            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 6 * 20, 1), 1.0f))
+            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 10000 * 20, 1), 1.0f))
             .build();
-    //注册"POISON_FOOD_COMPONENT"
     public static final FoodComponent POISON_FOOD_COMPONENT = new FoodComponent.Builder()
             .alwaysEdible()
-            .nutrition(10000)
-            .saturationModifier(10000)
             .build();
-    //注册神秘物品
-    public static final Item SECRET_FOOD = register(
-            "secret_food",
-            Item::new,
-            new Item.Settings().food(POISON_FOOD_COMPONENT, POISON_FOOD_CONSUMABLE_COMPONENT)
-    );
-    public static final ToolMaterial SecretArmorMaterial = new ToolMaterial(
+    public static final Item SECRET_FOOD = register("secret_food", Item::new, new Item.Settings().food(POISON_FOOD_COMPONENT, POISON_FOOD_CONSUMABLE_COMPONENT));
+    public static final ToolMaterial SecretToolMaterial = new ToolMaterial(
             BlockTags.INCORRECT_FOR_WOODEN_TOOL,
-            455888,
-            70000000F,
-            11111.5F,
-            2200, null
+            455,
+            5.0F,
+            1.5F,
+            22,
+            null
     );
-    public static final Item SECRET_SWORD = register(
-            "secret_sword",
-            settings -> new SwordItem(SecretArmorMaterial, 1000000f, 1000f, settings),
-            new Item.Settings()
-    );
+    public static final Item SECRET_SWORD = register("secret_sword", settings -> new SwordItem(SecretToolMaterial, 1000000000000f, 100000000000000f, settings), new Item.Settings());
+
 }
 
