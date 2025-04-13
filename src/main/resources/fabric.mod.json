@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "randomod",
+	"version": "${version}",
+	"name": "RandoMod",
+	"description": "Random Write Content's'Mod",
+	"authors": [
+		""
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "gi199 Protect License",
+	"icon": "assets/randomod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.gi199.randomod.RandoMod"
+		],
+		"client": [
+			"com.gi199.randomod.RandoModClient"
+		]
+	},
+	"mixins": [
+		"randomod.mixins.json",
+		{
+			"config": "randomod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.12",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
