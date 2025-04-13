@@ -33,6 +33,7 @@ public class ItemClasses {
 
         return item;
     }
+
     public static final Item SECRET_ITEM = register("secret_item", Item::new, new Item.Settings());
 
     public static void initialize() {
@@ -54,6 +55,7 @@ public class ItemClasses {
                 .register((itemGroup) -> itemGroup.add(SecretArmorMaterial.SECRET_HELMET));
 
     }
+
     public static final ConsumableComponent POISON_FOOD_CONSUMABLE_COMPONENT = ConsumableComponents.food()
             // The duration is in ticks, 20 ticks = 1 second
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 10000 * 20, 1), 1.0f))
@@ -71,24 +73,5 @@ public class ItemClasses {
             null
     );
     public static final Item SECRET_SWORD = register("secret_sword", settings -> new SwordItem(SecretToolMaterial, 1000000000000f, 100000000000000f, settings), new Item.Settings());
-    public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(FabricDocsReference.MOD_ID, "item_group"));
-    public static final ItemGroup CUSTOM_ITEM_GROUP = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(ItemClasses.SECRET_ITEM))
-            .displayName(Text.translatable("itemGroup.randomod"))
-            .build();
-    // Register the group.
-    Registry.Register(Registries.ITEM_GROUP, CUSTOM_ITEM_GROUP_KEY, CUSTOM_ITEM_GROUP);
-    ItemGroupEvents.modifyEntriesEvent(CUSTOM_ITEM_GROUP_KEY).register(itemGroup -> {
-        itemGroup.add(ModItems.SUSPICIOUS_SUBSTANCE);
-        itemGroup.add(ModItems.POISONOUS_APPLE);
-        itemGroup.add(ModItems.GUIDITE_SWORD);
-        itemGroup.add(ModItems.GUIDITE_HELMET);
-        itemGroup.add(ModItems.GUIDITE_BOOTS);
-        itemGroup.add(ModItems.GUIDITE_LEGGINGS);
-        itemGroup.add(ModItems.GUIDITE_CHESTPLATE);
-        itemGroup.add(ModItems.LIGHTNING_STICK);
-        // ...
-    };
 
 }
-
