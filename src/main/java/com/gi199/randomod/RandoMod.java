@@ -4,7 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class RandoMod implements ModInitializer {
+public class RandoMod implements ModInitializer{
 	public static final String MOD_ID = "randomod";
 
 	// This logger is used to write text to the console and the log file.
@@ -19,6 +19,8 @@ public class RandoMod implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
-		ItemClasses.initialize();
+		ModItem.initialize();
+		BlockClasses.initialize();
+		System.gc();
 	}
 }

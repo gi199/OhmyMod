@@ -12,7 +12,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.Map;
 
-import static com.gi199.randomod.ItemClasses.register;
+import static com.gi199.randomod.ModItem.register;
 
 public class SecretArmorMaterial {
     // Within the ModArmorMaterials class
@@ -31,7 +31,7 @@ public class SecretArmorMaterial {
             0.0F,
             0.0F,
             null,
-            null
+            SECRET_ARMOR_MATERIAL_KEY
     );
     public static final Item SECRET_HELMET = register(
             "secret_helmet",
