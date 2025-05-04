@@ -18,9 +18,9 @@ repositories {
 		url 'https://repository.hanbings.io/proxy'
 
 	}
-			maven {
-				url "https://cursemaven.com"
-			}
+	maven {
+		url 'https://cursemaven.com'
+	}
 
 }
 loom {
