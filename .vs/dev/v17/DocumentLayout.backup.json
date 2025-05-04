@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\mc\\dev\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\mc\\dev\\src\\main\\java\\com\\gi199\\randomod\\BlockClasses.java||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\main\\java\\com\\gi199\\randomod\\BlockClasses.java||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BlockClasses.java",
+              "DocumentMoniker": "D:\\mc\\dev\\src\\main\\java\\com\\gi199\\randomod\\BlockClasses.java",
+              "RelativeDocumentMoniker": "src\\main\\java\\com\\gi199\\randomod\\BlockClasses.java",
+              "ToolTip": "D:\\mc\\dev\\src\\main\\java\\com\\gi199\\randomod\\BlockClasses.java",
+              "RelativeToolTip": "src\\main\\java\\com\\gi199\\randomod\\BlockClasses.java",
+              "ViewState": "AgIAACoAAAAAAAAAAAAQwC4AAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKDSURBVEhLtZQ/b9NAGMaf93xObGF3ayeGdCuq\u002BATN0E7FAxuIjogJpTMrsVhZWgFhQEhFMFTqB8gIQ75CxdgOGfoHVVXsJKY\u002B\u002B2Xw1bGTtKFV\u002B5MenX06P8\u002B9vj\u002BEa3je\u002BOm4Ad67avjSjYeWq4aYiyO4agg3Huo2wlz\u002BHqkHKurqzyPxe3dJjHnmrDb2HY6sNoDXACwAoLExNNHHEkBNayl99KI7NWC1se9UlWoDVGcAmUhLPxMhBSEttiTApUh6OBGw3DhxIjLbKVF9ZCAyQyIkJLIWAglpCQFFBmIycGHIkl\u002Bpwnn/xDn1F4Ji3005e/wKdnqBSqJAYOQVzPvsyIHZLg\u002B/OQNZQd\u002BoIjQt9GVVB/jshPHfdkKifjmQmXM1m00AQK1WAzOP3KbQl1WE0kIgLQTShoDPDlK0EzLqCY2WZHFxEd1uFxsbG9je3i6ZXEffsBCamXlg2hBgfAFQVyJbpEsODw\u002BhlMLx8THOz89LJteRzT4zzypgPAOAFAQlRgG3JZu9lmlBAMj31cWMgJWVFRwdHY13lyhW0JM2gLfMJelzVaTZbPLBwQEHQcCbm5ujszdFX73P/O3JJ/6\u002B/pF/rH9g0qYj3o1fCDdj6\u002BkODE5hcAoCRufgrghNvYtMO1\u002BDOyWQ2e7pZYruIcBCT2azDyr2zt0H6F8TSLsTx/abKwOKV0VRs9BXRCd04bX21sIrA4hoqmYRSLtzZjneXmstxH3sosQQ3q/Wcnj5PnkOZiA5RSVVucw0geQEMlUdKzK8/dZCbo7bVKBIYGBUEBau5b60Or25SXPoADXe\u002BT8oMjAwKuibVueP5Xin/qQ5AAgQtm4ZokDYTQR58GmqOQD8A4B2Sdfa5jAJAAAAAElFTkSuQmCC",
+              "WhenOpened": "2025-05-03T05:21:39.673Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
