@@ -12,9 +12,12 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+
 import java.util.function.Function;
 
 public class BlockClasses {
+    public static final Block WOW_DIRT = register("wow_dirt", Block::new, AbstractBlock.Settings.create().sounds(BlockSoundGroup.GRASS), true);
+
     private static Block register(String name, Function<AbstractBlock.Settings, Block> blockFactory, AbstractBlock.Settings settings, boolean shouldRegisterItem) {
         // Create a registry key for the block
         RegistryKey<Block> blockKey = keyOfBlock(name);
@@ -47,6 +50,4 @@ public class BlockClasses {
 
         System.gc();
     }
-
-    public static final Block WOW_DIRT = register("wow_dirt", Block::new, AbstractBlock.Settings.create().sounds(BlockSoundGroup.GRASS), true);
 }

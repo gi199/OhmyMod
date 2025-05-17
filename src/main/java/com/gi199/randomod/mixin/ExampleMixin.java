@@ -11,18 +11,19 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(MinecraftServer.class)
 public abstract class ExampleMixin {
-	@Shadow @Final
+    @Shadow
+    @Final
     private static Logger LOGGER;
 
 
-	@Inject(at = @At("HEAD"), method = "loadWorld")
-	private void init(CallbackInfo info) {
-		// This code is injected into the start of MinecraftServer.loadWorld()V
-		LOGGER.info("Man");
-		try {
-			LOGGER.info("Try");
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
+    @Inject(at = @At("HEAD"), method = "loadWorld")
+    private void init(CallbackInfo info) {
+        // This code is injected into the start of MinecraftServer.loadWorld()V
+        LOGGER.info("Man");
+        try {
+            LOGGER.info("Try");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

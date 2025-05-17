@@ -14,20 +14,19 @@ import net.minecraft.util.Identifier;
 public class SecretPotion implements ModInitializer {
     public static final Potion SECRET_POTION = Registry.register(Registries.POTION, Identifier.of(RandoMod.MOD_ID, "tater"), new Potion("tater", new StatusEffectInstance(RandoMod.SECRET_EFFECT, 3600, 0)));
 
+    public static void initialize() {
+
+    }
+
     @Override
     public void onInitialize() {
-        FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
-            builder.registerPotionRecipe(
-                    // Input potion.
-                    Potions.WATER,
-                    // Ingredient
-                    Items.POTATO,
-                    // Output potion.
-                    Registries.POTION.getEntry(SECRET_POTION)
-            );
-        });
-    }
-    public static void initialize(){
-
+        FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> builder.registerPotionRecipe(
+                // Input potion.
+                Potions.WATER,
+                // Ingredient
+                Items.POTATO,
+                // Output potion.
+                Registries.POTION.getEntry(SECRET_POTION)
+        ));
     }
 }

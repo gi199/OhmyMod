@@ -1,5 +1,6 @@
 {
   "item.randomod.secret_item": "Secret Item",
   "item.randomod.secret_food": "Secret Food",
-  "itemGroup.randomod":"RandoMod ItemGroup"
+  "itemGroup.randomod":"RandoMod ItemGroup",
+  "commands.replaceentity.success": "成功替换 %d 个实体（半径：%.1f 格）"
 }

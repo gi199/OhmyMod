@@ -20,6 +20,9 @@
 		],
 		"client": [
 			"com.gi199.randomod.RandoModClient"
+		],
+		"fabric-datagen": [
+			"com.gi199.randomod.datagenerator.RandoModDataGenerator"
 		]
 	},
 	"mixins": [

@@ -10,8 +10,11 @@ import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
+
 import java.util.Map;
+
 import static net.minecraft.item.Items.register;
+
 public class SecretArmorMaterial {
     // Within the ModArmorMaterials class
     public static final int BASE_DURABILITY = 100000;
