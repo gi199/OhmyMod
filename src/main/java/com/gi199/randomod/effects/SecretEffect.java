@@ -15,14 +15,14 @@ public class SecretEffect extends StatusEffect {
 
     // Called every tick to check if the effect can be applied or not
     @Override
-    public boolean canApplyUpdateEffect(int duration, int amplifier) {
+    public final boolean canApplyUpdateEffect(int duration, int amplifier) {
         // In our case, we just make it return true so that it applies the effect every tick
         return true;
     }
 
     // Called when the effect is applied.
     @Override
-    public boolean applyUpdateEffect(ServerWorld world, LivingEntity entity, int amplifier) {
+    public final boolean applyUpdateEffect(ServerWorld world, LivingEntity entity, int amplifier) {
         if (entity instanceof PlayerEntity) {
             ((PlayerEntity) entity).addExperience(1 << amplifier); // Higher amplifier gives you experience faster
         }

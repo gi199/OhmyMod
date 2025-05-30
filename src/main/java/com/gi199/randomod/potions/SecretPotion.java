@@ -12,7 +12,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class SecretPotion implements ModInitializer {
-    public static final Potion SECRET_POTION = Registry.register(Registries.POTION, Identifier.of(RandoMod.MOD_ID, "tater"), new Potion("tater", new StatusEffectInstance(RandoMod.SECRET_EFFECT, 3600, 0)));
+    private static final Potion SECRET_POTION = Registry.register(Registries.POTION, Identifier.of(RandoMod.MOD_ID, "tater"), new Potion("tater", new StatusEffectInstance(RandoMod.SECRET_EFFECT, 3600, 0)));
 
     public static void initialize() {
 

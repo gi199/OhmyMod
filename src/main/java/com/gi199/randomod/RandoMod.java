@@ -1,7 +1,6 @@
 package com.gi199.randomod;
 
 import com.gi199.randomod.block.BlockClasses;
-import com.gi199.randomod.command.ReplaceEntityCommand;
 import com.gi199.randomod.effects.SecretEffect;
 import com.gi199.randomod.item.ModItem;
 import com.gi199.randomod.potions.SecretPotion;
@@ -23,12 +22,12 @@ public class RandoMod implements ModInitializer {
     // This logger is used to write text to the console and the log file.
     // It is considered best practice to use your mod id as the logger's name.
     // That way, it's clear which mod wrote info, warnings, and errors.
-    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static final RegistryEntry<StatusEffect> SECRET_EFFECT =
             Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(RandoMod.MOD_ID, "secret_effects"), new SecretEffect());
 
     @Override
-    public void onInitialize() {
+    public final void onInitialize() {
         // This code runs as soon as Minecraft is in a mod-load-ready state.
         // However, some things (like resources) may still be uninitialized.
         // Proceed with mild caution.
@@ -36,13 +35,18 @@ public class RandoMod implements ModInitializer {
         LOGGER.info("Hello Fabric world!");
         ModItem.initialize();
         BlockClasses.initialize();
-        System.gc();
         SecretPotion.initialize();
-        ReplaceEntityCommand.register();
+        //
         //
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("crash").executes(context -> {
             context.getSource().sendFeedback(() -> Text.literal("Called /crash."), false);
             return 1;
         })));
+
+    }
+    public void MixinVoid() {
+        // This method is here to ensure that the mod is not empty.
+        // It can be removed if you add actual functionality to the mod.
+        // The method name is intentionally left empty to avoid confusion.
     }
 }

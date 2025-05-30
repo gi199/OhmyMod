@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Tessellator.class)
-public class ExampleClientMixin {
+class ExampleClientMixin {
     @Inject(at = @At("HEAD"), method = "initialize")
     private static void init(CallbackInfo info) {
 		/*
