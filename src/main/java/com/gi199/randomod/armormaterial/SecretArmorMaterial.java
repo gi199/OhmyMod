@@ -1,8 +1,10 @@
 package com.gi199.randomod.armormaterial;
 
 import com.gi199.randomod.RandoMod;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.item.equipment.ArmorMaterial;
 import net.minecraft.item.equipment.EquipmentAsset;
 import net.minecraft.item.equipment.EquipmentAssetKeys;
@@ -56,4 +58,15 @@ public class SecretArmorMaterial {
             settings -> new ArmorItem(INSTANCE, EquipmentType.BOOTS, settings),
             new Item.Settings().maxDamage(EquipmentType.BOOTS.getMaxDamage(SecretArmorMaterial.BASE_DURABILITY))
     );
+    public static void initialize() {
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+                .register((itemGroup) -> itemGroup.add(SecretArmorMaterial.SECRET_BOOTS));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+                .register((itemGroup) -> itemGroup.add(SecretArmorMaterial.SECRET_LEGGINGS));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+                .register((itemGroup) -> itemGroup.add(SecretArmorMaterial.SECRET_CHESTPLATE));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+                .register((itemGroup) -> itemGroup.add(SecretArmorMaterial.SECRET_HELMET));
+        // This method can be used for any additional initialization logic if needed.
+    }
 }

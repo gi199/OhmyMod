@@ -10,16 +10,16 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(MinecraftServer.class)
-abstract class ExampleMixin {
+@Mixin (MinecraftServer.class)
+
+abstract class VKMixin {
     @Shadow
     @Final
     private static Logger LOGGER;
 
-
     @Inject(at = @At("HEAD"), method = "loadWorld")
     private void init(CallbackInfo info) {
+        LOGGER.info("wow",",", RandoMod.MOD_ID);
         // This code is injected into the start of MinecraftServer.loadWorld()V
-
     }
 }

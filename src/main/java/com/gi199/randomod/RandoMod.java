@@ -1,12 +1,15 @@
 package com.gi199.randomod;
 
+import com.gi199.randomod.armormaterial.SecretArmorMaterial;
 import com.gi199.randomod.block.BlockClasses;
 import com.gi199.randomod.effects.SecretEffect;
 import com.gi199.randomod.item.ModItem;
 import com.gi199.randomod.potions.SecretPotion;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -42,11 +45,23 @@ public class RandoMod implements ModInitializer {
             context.getSource().sendFeedback(() -> Text.literal("Called /crash."), false);
             return 1;
         })));
-
-    }
-    public void MixinVoid() {
-        // This method is here to ensure that the mod is not empty.
-        // It can be removed if you add actual functionality to the mod.
-        // The method name is intentionally left empty to avoid confusion.
+    //register items in item groups
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
+                .register((itemGroup) -> itemGroup.add(ModItem.SECRET_ITEM));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK)
+                .register((itemGroup) -> itemGroup.add(ModItem.SECRET_FOOD));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+                .register((itemGroup) -> itemGroup.add(ModItem.SECRET_SWORD));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+                .register((itemGroup) -> itemGroup.add(SecretArmorMaterial.SECRET_BOOTS));
+        //ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+                //.register((itemGroup) -> itemGroup.add(SecretArmorMaterial.SECRET_LEGGINGS));
+        //ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+                //.register((itemGroup) -> itemGroup.add(SecretArmorMaterial.SECRET_CHESTPLATE));
+        //ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+                //.register((itemGroup) -> itemGroup.add(SecretArmorMaterial.SECRET_HELMET));
+        //ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS)
+                //.register((itemGroup) -> itemGroup.add(BlockClasses.WOW_DIRT));
+    SecretArmorMaterial.initialize();
     }
 }

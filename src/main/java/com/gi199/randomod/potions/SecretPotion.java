@@ -1,6 +1,7 @@
 package com.gi199.randomod.potions;
 
 import com.gi199.randomod.RandoMod;
+import com.gi199.randomod.item.ModItem;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -24,7 +25,7 @@ public class SecretPotion implements ModInitializer {
                 // Input potion.
                 Potions.WATER,
                 // Ingredient
-                Items.POTATO,
+                ModItem.SECRET_FOOD,
                 // Output potion.
                 Registries.POTION.getEntry(SECRET_POTION)
         ));
