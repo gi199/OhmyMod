@@ -4,6 +4,7 @@ import com.gi199.randomod.armormaterial.SecretArmorMaterial;
 import com.gi199.randomod.block.BlockClasses;
 import com.gi199.randomod.effects.SecretEffect;
 import com.gi199.randomod.item.ModItem;
+import com.gi199.randomod.item.RandoModItemGroup;
 import com.gi199.randomod.potions.SecretPotion;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
@@ -54,14 +55,7 @@ public class RandoMod implements ModInitializer {
                 .register((itemGroup) -> itemGroup.add(ModItem.SECRET_SWORD));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
                 .register((itemGroup) -> itemGroup.add(SecretArmorMaterial.SECRET_BOOTS));
-        //ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
-                //.register((itemGroup) -> itemGroup.add(SecretArmorMaterial.SECRET_LEGGINGS));
-        //ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
-                //.register((itemGroup) -> itemGroup.add(SecretArmorMaterial.SECRET_CHESTPLATE));
-        //ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
-                //.register((itemGroup) -> itemGroup.add(SecretArmorMaterial.SECRET_HELMET));
-        //ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS)
-                //.register((itemGroup) -> itemGroup.add(BlockClasses.WOW_DIRT));
     SecretArmorMaterial.initialize();
+    RandoModItemGroup.initialize();
     }
 }
