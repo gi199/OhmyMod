@@ -2,6 +2,7 @@ package com.gi199.randomod.item;
 
 import com.gi199.randomod.RandoMod;
 import com.gi199.randomod.armormaterial.SecretArmorMaterial;
+import com.gi199.randomod.block.BlockClasses;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.ItemGroup;
@@ -31,7 +32,7 @@ public static void initialize() {
         itemGroup.add(SecretArmorMaterial.SECRET_BOOTS);
         itemGroup.add(SecretArmorMaterial.SECRET_LEGGINGS);
         itemGroup.add(SecretArmorMaterial.SECRET_CHESTPLATE);
-        // ...
+        itemGroup.add(BlockClasses.WOW_DIRT);
     });
     }
 }

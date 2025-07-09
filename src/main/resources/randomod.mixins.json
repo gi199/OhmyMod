@@ -3,8 +3,6 @@
   "package": "com.gi199.randomod.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "ExampleMixin",
-    "VKMixin"
   ],
   "injectors": {
     "defaultRequire": 1

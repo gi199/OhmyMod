@@ -1,5 +1,7 @@
 {
   "item.randomod.secret_item": "神秘物品",
   "item.randomod.secret_food": "神秘食物",
-  "itemGroup.randomod": "RandoMod物品组"
+  "itemGroup.randomod": "RandoMod物品组",
+  "item.randomod.secret_sword": "神秘之剑",
+  "item.randomod.secret_boots": "神秘靴子"
 }
